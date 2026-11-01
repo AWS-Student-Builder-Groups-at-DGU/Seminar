@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LabServices",
+      "Effect": "Allow",
+      "Action": [
+        "cloudshell:*",
+        "cloudformation:*",
+        "lambda:*",
+        "events:*",
+        "scheduler:*",
+        "sqs:*",
+        "sns:*",
+        "sms-voice:*",
+        "s3:*",
+        "cloudwatch:*",
+        "logs:*",
+        "xray:*",
+        "fis:*",
+        "codedeploy:*",
+        "ssm:*",
+        "notifications:*",
+        "notifications-contacts:*",
+        "tag:GetResources",
+        "sts:GetCallerIdentity"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LabRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:TagRole",
+        "iam:PassRole",
+        "iam:GetRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies",
+        "iam:UntagRole",
+        "iam:UpdateAssumeRolePolicy",
+        "iam:UpdateRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/devops-day-lab-*"
+    },
+    {
+      "Sid": "ServiceLinkedRoles",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/*"
+    }
+  ]
+}
